@@ -1,937 +1,125 @@
-<!DOCTYPE html><html>
-
-<head>
-<meta charset="utf-8">
-<title># 程序大概是怎么回事</title>
-<style>
-@font-face {
-  font-family: octicons-anchor;
-  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
-}
-
-body {
-  background-color: white;
-}
-
-.markdown-body {
-  min-width: 200px;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 30px;
-
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  color: #333;
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  word-wrap: break-word;
-}
-
-.markdown-body a {
-  background: transparent;
-}
-
-.markdown-body a:active,
-.markdown-body a:hover {
-  outline: 0;
-}
-
-.markdown-body strong {
-  font-weight: bold;
-}
-
-.markdown-body h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-.markdown-body img {
-  border: 0;
-}
-
-.markdown-body hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-.markdown-body pre {
-  overflow: auto;
-}
-
-.markdown-body code,
-.markdown-body kbd,
-.markdown-body pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-.markdown-body input {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-.markdown-body html input[disabled] {
-  cursor: default;
-}
-
-.markdown-body input {
-  line-height: normal;
-}
-
-.markdown-body input[type="checkbox"] {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.markdown-body table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.markdown-body td,
-.markdown-body th {
-  padding: 0;
-}
-
-.markdown-body * {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.markdown-body input {
-  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-.markdown-body a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
-.markdown-body a:hover,
-.markdown-body a:focus,
-.markdown-body a:active {
-  text-decoration: underline;
-}
-
-.markdown-body hr {
-  height: 0;
-  margin: 15px 0;
-  overflow: hidden;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.markdown-body hr:before {
-  display: table;
-  content: "";
-}
-
-.markdown-body hr:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  line-height: 1.1;
-}
-
-.markdown-body h1 {
-  font-size: 30px;
-}
-
-.markdown-body h2 {
-  font-size: 21px;
-}
-
-.markdown-body h3 {
-  font-size: 16px;
-}
-
-.markdown-body h4 {
-  font-size: 14px;
-}
-
-.markdown-body h5 {
-  font-size: 12px;
-}
-
-.markdown-body h6 {
-  font-size: 11px;
-}
-
-.markdown-body blockquote {
-  margin: 0;
-}
-
-.markdown-body ul,
-.markdown-body ol {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.markdown-body ol ol,
-.markdown-body ul ol {
-  list-style-type: lower-roman;
-}
-
-.markdown-body ul ul ol,
-.markdown-body ul ol ol,
-.markdown-body ol ul ol,
-.markdown-body ol ol ol {
-  list-style-type: lower-alpha;
-}
-
-.markdown-body dd {
-  margin-left: 0;
-}
-
-.markdown-body code {
-  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-}
-
-.markdown-body pre {
-  margin-top: 0;
-  margin-bottom: 0;
-  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-}
-
-.markdown-body kbd {
-  background-color: #e7e7e7;
-  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
-  background-image: linear-gradient(#fefefe, #e7e7e7);
-  background-repeat: repeat-x;
-  border-radius: 2px;
-  border: 1px solid #cfcfcf;
-  color: #000;
-  padding: 3px 5px;
-  line-height: 10px;
-  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  display: inline-block;
-}
-
-.markdown-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-.markdown-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-.markdown-body .anchor {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  padding-right: 6px;
-  padding-left: 30px;
-  margin-left: -30px;
-}
-
-.markdown-body .anchor:focus {
-  outline: none;
-}
-
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  position: relative;
-  margin-top: 1em;
-  margin-bottom: 16px;
-  font-weight: bold;
-  line-height: 1.4;
-}
-
-.markdown-body h1 .octicon-link,
-.markdown-body h2 .octicon-link,
-.markdown-body h3 .octicon-link,
-.markdown-body h4 .octicon-link,
-.markdown-body h5 .octicon-link,
-.markdown-body h6 .octicon-link {
-  display: none;
-  color: #000;
-  vertical-align: middle;
-}
-
-.markdown-body h1:hover .anchor,
-.markdown-body h2:hover .anchor,
-.markdown-body h3:hover .anchor,
-.markdown-body h4:hover .anchor,
-.markdown-body h5:hover .anchor,
-.markdown-body h6:hover .anchor {
-  height: 1em;
-  padding-left: 8px;
-  margin-left: -30px;
-  line-height: 1;
-  text-decoration: none;
-}
-
-.markdown-body h1:hover .anchor .octicon-link,
-.markdown-body h2:hover .anchor .octicon-link,
-.markdown-body h3:hover .anchor .octicon-link,
-.markdown-body h4:hover .anchor .octicon-link,
-.markdown-body h5:hover .anchor .octicon-link,
-.markdown-body h6:hover .anchor .octicon-link {
-  display: inline-block;
-}
-
-.markdown-body h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.25em;
-  line-height: 1.2;
-  border-bottom: 1px solid #eee;
-}
-
-.markdown-body h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-  border-bottom: 1px solid #eee;
-}
-
-.markdown-body h3 {
-  font-size: 1.5em;
-  line-height: 1.43;
-}
-
-.markdown-body h4 {
-  font-size: 1.25em;
-}
-
-.markdown-body h5 {
-  font-size: 1em;
-}
-
-.markdown-body h6 {
-  font-size: 1em;
-  color: #777;
-}
-
-.markdown-body p,
-.markdown-body blockquote,
-.markdown-body ul,
-.markdown-body ol,
-.markdown-body dl,
-.markdown-body table,
-.markdown-body pre {
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-.markdown-body hr {
-  height: 4px;
-  padding: 0;
-  margin: 16px 0;
-  background-color: #e7e7e7;
-  border: 0 none;
-}
-
-.markdown-body ul,
-.markdown-body ol {
-  padding-left: 2em;
-}
-
-.markdown-body ul ul,
-.markdown-body ul ol,
-.markdown-body ol ol,
-.markdown-body ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.markdown-body li>p {
-  margin-top: 16px;
-}
-
-.markdown-body dl {
-  padding: 0;
-}
-
-.markdown-body dl dt {
-  padding: 0;
-  margin-top: 16px;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.markdown-body dl dd {
-  padding: 0 16px;
-  margin-bottom: 16px;
-}
-
-.markdown-body blockquote {
-  padding: 0 15px;
-  color: #777;
-  border-left: 4px solid #ddd;
-}
-
-.markdown-body blockquote>:first-child {
-  margin-top: 0;
-}
-
-.markdown-body blockquote>:last-child {
-  margin-bottom: 0;
-}
-
-.markdown-body table {
-  display: block;
-  width: 100%;
-  overflow: auto;
-  word-break: normal;
-  word-break: keep-all;
-}
-
-.markdown-body table th {
-  font-weight: bold;
-}
-
-.markdown-body table th,
-.markdown-body table td {
-  padding: 6px 13px;
-  border: 1px solid #ddd;
-}
-
-.markdown-body table tr {
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-}
-
-.markdown-body table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-
-.markdown-body img {
-  max-width: 100%;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.markdown-body code {
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  margin: 0;
-  font-size: 85%;
-  background-color: rgba(0,0,0,0.04);
-  border-radius: 3px;
-}
-
-.markdown-body code:before,
-.markdown-body code:after {
-  letter-spacing: -0.2em;
-  content: "\00a0";
-}
-
-.markdown-body pre>code {
-  padding: 0;
-  margin: 0;
-  font-size: 100%;
-  word-break: normal;
-  white-space: pre;
-  background: transparent;
-  border: 0;
-}
-
-.markdown-body .highlight {
-  margin-bottom: 16px;
-}
-
-.markdown-body .highlight pre,
-.markdown-body pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: #f7f7f7;
-  border-radius: 3px;
-}
-
-.markdown-body .highlight pre {
-  margin-bottom: 0;
-  word-break: normal;
-}
-
-.markdown-body pre {
-  word-wrap: normal;
-}
-
-.markdown-body pre code {
-  display: inline;
-  max-width: initial;
-  padding: 0;
-  margin: 0;
-  overflow: initial;
-  line-height: inherit;
-  word-wrap: normal;
-  background-color: transparent;
-  border: 0;
-}
-
-.markdown-body pre code:before,
-.markdown-body pre code:after {
-  content: normal;
-}
-
-.markdown-body .highlight {
-  background: #fff;
-}
-
-.markdown-body .highlight .mf,
-.markdown-body .highlight .mh,
-.markdown-body .highlight .mi,
-.markdown-body .highlight .mo,
-.markdown-body .highlight .il,
-.markdown-body .highlight .m {
-  color: #945277;
-}
-
-.markdown-body .highlight .s,
-.markdown-body .highlight .sb,
-.markdown-body .highlight .sc,
-.markdown-body .highlight .sd,
-.markdown-body .highlight .s2,
-.markdown-body .highlight .se,
-.markdown-body .highlight .sh,
-.markdown-body .highlight .si,
-.markdown-body .highlight .sx,
-.markdown-body .highlight .s1 {
-  color: #df5000;
-}
-
-.markdown-body .highlight .kc,
-.markdown-body .highlight .kd,
-.markdown-body .highlight .kn,
-.markdown-body .highlight .kp,
-.markdown-body .highlight .kr,
-.markdown-body .highlight .kt,
-.markdown-body .highlight .k,
-.markdown-body .highlight .o {
-  font-weight: bold;
-}
-
-.markdown-body .highlight .kt {
-  color: #458;
-}
-
-.markdown-body .highlight .c,
-.markdown-body .highlight .cm,
-.markdown-body .highlight .c1 {
-  color: #998;
-  font-style: italic;
-}
-
-.markdown-body .highlight .cp,
-.markdown-body .highlight .cs {
-  color: #999;
-  font-weight: bold;
-}
-
-.markdown-body .highlight .cs {
-  font-style: italic;
-}
-
-.markdown-body .highlight .n {
-  color: #333;
-}
-
-.markdown-body .highlight .na,
-.markdown-body .highlight .nv,
-.markdown-body .highlight .vc,
-.markdown-body .highlight .vg,
-.markdown-body .highlight .vi {
-  color: #008080;
-}
-
-.markdown-body .highlight .nb {
-  color: #0086B3;
-}
-
-.markdown-body .highlight .nc {
-  color: #458;
-  font-weight: bold;
-}
-
-.markdown-body .highlight .no {
-  color: #094e99;
-}
-
-.markdown-body .highlight .ni {
-  color: #800080;
-}
-
-.markdown-body .highlight .ne {
-  color: #990000;
-  font-weight: bold;
-}
-
-.markdown-body .highlight .nf {
-  color: #945277;
-  font-weight: bold;
-}
-
-.markdown-body .highlight .nn {
-  color: #555;
-}
-
-.markdown-body .highlight .nt {
-  color: #000080;
-}
-
-.markdown-body .highlight .err {
-  color: #a61717;
-  background-color: #e3d2d2;
-}
-
-.markdown-body .highlight .gd {
-  color: #000;
-  background-color: #fdd;
-}
-
-.markdown-body .highlight .gd .x {
-  color: #000;
-  background-color: #faa;
-}
-
-.markdown-body .highlight .ge {
-  font-style: italic;
-}
-
-.markdown-body .highlight .gr {
-  color: #aa0000;
-}
-
-.markdown-body .highlight .gh {
-  color: #999;
-}
-
-.markdown-body .highlight .gi {
-  color: #000;
-  background-color: #dfd;
-}
-
-.markdown-body .highlight .gi .x {
-  color: #000;
-  background-color: #afa;
-}
-
-.markdown-body .highlight .go {
-  color: #888;
-}
-
-.markdown-body .highlight .gp {
-  color: #555;
-}
-
-.markdown-body .highlight .gs {
-  font-weight: bold;
-}
-
-.markdown-body .highlight .gu {
-  color: #800080;
-  font-weight: bold;
-}
-
-.markdown-body .highlight .gt {
-  color: #aa0000;
-}
-
-.markdown-body .highlight .ow {
-  font-weight: bold;
-}
-
-.markdown-body .highlight .w {
-  color: #bbb;
-}
-
-.markdown-body .highlight .sr {
-  color: #017936;
-}
-
-.markdown-body .highlight .ss {
-  color: #8b467f;
-}
-
-.markdown-body .highlight .bp {
-  color: #999;
-}
-
-.markdown-body .highlight .gc {
-  color: #999;
-  background-color: #EAF2F5;
-}
-
-.markdown-body .octicon {
-  font: normal normal 16px octicons-anchor;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.markdown-body .octicon-link:before {
-  content: '\f05c';
-}
-
-.markdown-body .task-list-item {
-  list-style-type: none;
-}
-
-.markdown-body .task-list-item+.task-list-item {
-  margin-top: 3px;
-}
-
-.markdown-body .task-list-item input {
-  float: left;
-  margin: 0.3em 0 0.25em -1.6em;
-  vertical-align: middle;
-}
-
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-  -webkit-text-size-adjust: none;
-}
-
-.hljs-comment,
-.diff .hljs-header {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.css .rule .hljs-keyword,
-.hljs-winutils,
-.nginx .hljs-title,
-.hljs-subst,
-.hljs-request,
-.hljs-status {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-hexcolor,
-.ruby .hljs-constant {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-doctag,
-.tex .hljs-formula {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-id,
-.scss .hljs-preprocessor {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-list .hljs-keyword,
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-class .hljs-title,
-.hljs-type,
-.vhdl .hljs-literal,
-.tex .hljs-command {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-tag .hljs-title,
-.hljs-rule .hljs-property,
-.django .hljs-tag .hljs-keyword {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-attribute,
-.hljs-variable,
-.lisp .hljs-body,
-.hljs-name {
-  color: #008080;
-}
-
-.hljs-regexp {
-  color: #009926;
-}
-
-.hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.lisp .hljs-keyword,
-.clojure .hljs-keyword,
-.scheme .hljs-keyword,
-.tex .hljs-special,
-.hljs-prompt {
-  color: #990073;
-}
-
-.hljs-built_in {
-  color: #0086b3;
-}
-
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-pi,
-.hljs-doctype,
-.hljs-shebang,
-.hljs-cdata {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.diff .hljs-change {
-  background: #0086b3;
-}
-
-.hljs-chunk {
-  color: #aaa;
-}
-
-
-</style>
-
-<style> @media print{ .hljs{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div class="markdown-body">
-<h1 id="toc_0">程序大概是怎么回事</h1>
-
-<p>计算机就是个机器，这个机器主要由CPU、内存、硬盘和输入输出设备组成。计算机上跑着操作系统，如Windows或Linux，操作系统上运行着各种应用程序，如Word, QQ等。</p>
-
-<p>操作系统将时间分成很多细小的时间片，一个时间片给一个程序用，另一个时间片给另一个程序用，并频繁地在程序间切换。不过，在应用程序看来，整个机器资源好像都归他使，操作系统给他提供了这种假象。</p>
-
-<p>对程序员而言，我们写程序，基本不用考虑其他应用程序，我们想好怎么做自己的事就可以了。</p>
-
-<p>应用程序看上去能做很多事情，能读写文档，能播放音乐，能聊天，能玩游戏，能下围棋 &hellip;&hellip;</p>
-
-<p>但本质上，计算机只会执行预先写好的指令而已，这些指令也只是操作数据或者设备。所谓程序，基本上就是告诉计算机要操作的数据和执行的指令序列， 即对什么数据做什么操作。</p>
-
-<p>比如说：</p>
-
-<pre><code>读文档，就是将数据从磁盘加载到内存，然后输出到显示器上
-
-写文档，就是将数据从内存写回磁盘。
-
-播放音乐，就是将音乐的数据加载到内存，然后写到声卡上。
-
-聊天，就是从键盘接收聊天数据，放到内存，然后传给网卡，通过网络传给另一个人的网卡，再从网卡传到内存，显示在显示器上。
-</code></pre>
-
-<p>基本上，所有数据都需要放到内存进行处理，程序的很大一部分工作就是操作在内存中的数据。</p>
-
-<p>本文主要就说说这个&quot;数据&quot;。（以Java为例）</p>
-
-<p>数据</p>
-
-<p>数据是什么？数据在计算机内部都是二进制，不方便操作，为了方便操作数据，高级语言引入了&quot;数据类型&quot;和&quot;变量&quot;的概念。</p>
-
-<p>数据类型</p>
-
-<p>数据类型用于对数据归类，方便理解和操作，对Java语言而言，有如下基本数据类型：</p>
-
-<pre><code>整数类型：有四种整型 byte/short/int/long，分别有不同的取值范围
-
-小数类型 ：有两种类型 float/double，有不同的取值范围和精度
-
-字符类型：char，表示单个字符
-
-真假类型：boolean，表示真假
-</code></pre>
-
-<p>基本数据类型都有对应的数组类型，数组表示固定长度的同种数据类型的多条记录，这些数据在内存中挨在一起存放。</p>
-
-<p>比如说，一个自然数可以用一个整数类型数据表示，100个连续的自然数可以用一个长度为100的整数数组表示。一个字符用一个char表示，一段文字可以用一个char数组表示。</p>
-
-<p>Java是一个面向对象的语言，除了基本数据类型，其他都是对象类型 ，对象到底是什么呢？</p>
-
-<p>简单的说，对象是由基本数据类型、数组和其他对象组合而成的一个东西，以方便对其整体进行操作。</p>
-
-<p>比如说，一个学生对象，可以由如下信息组成：</p>
-
-<pre><code>姓名：一个字符数组
-
-年龄：一个整数
-
-性别：一个字符
-
-入学分数：一个小数
-</code></pre>
-
-<p>日期在Java中也是一个对象，内部表示为整形long。</p>
-
-<p>就像世界万物的组成，都是由元素周期表中的108个基本元素组成的，基本数据类型就相当于化学中的基本元素，而对象就相当于世界万物。</p>
-
-<p>变量</p>
-
-<p>为了操作数据，需要把数据存放到内存中，所谓内存在程序看来就是一块有地址编号的连续的空间，放到内存中的某个位置后，为了方便地找到和操作这个数据，需要给这个位置起一个名字。编程语言通过变量这个概念来表示这个过程。</p>
-
-<p>声明一个变量，比如 int a其实就是在内存中分配了一个空间，这个空间存放int数据类型，a指向这个内存空间所在的位置，通过对a操作即可操作a指向的内存空间，比如a=5这个操作即可将a指向的内存空间的值改为5。</p>
-
-<p>之所以叫变量，是因为它表示的是内存中的位置，这个位置存放的值是可以变化的。</p>
-
-<p>虽然变量的值是可以变化的，但名字是不变的，这个名字应该代表程序员心目中这块内存位置的意义，这个意义应该是不变的，比如说这个变量int second表示时钟秒数，在不同时间可以被赋予不同的值，但它表示的就是时钟秒数。之所以说应该是因为这不是必须的，如果你非要起一个变量名叫age但赋予它身高的值，计算机也拿你没办法。</p>
-
-<p>重要的话再说一遍！变量就是给数据起名字，方便找不同的数据，它的值可以变，但含义不应变。再比如说一个合同，可以有四个变量：</p>
-
-<ul>
-<li><p>first_party: 含义是甲方</p></li>
-<li><p>second_party: 含义是乙方</p></li>
-<li><p>contract_body: 含义是合同内容</p></li>
-<li><p>contract_sign_date: 含义是合同签署日期</p></li>
-</ul>
-
-<p>这些变量表示的含义是确定的，但对不同的合同，他们的值是不同的。</p>
-
-<p>初学编程的人经常使用像a,b,c,hehe,haha这种无意义的名字，给变量起一个有意义的名字吧！</p>
-
-<p>通过声明变量，每个变量赋予一个数据类型和一个有意义的名字，我们就告诉了计算机我们要操作的数据。</p>
-
-<p>有了数据，怎么对数据进行操作呢？</p>
-
-</div></body>
-
-</html>
+# 程序大概是怎么回事
+
+
+计算机就是个机器，这个机器主要由CPU、内存、硬盘和输入输出设备组成。计算机上跑着操作系统，如Windows或Linux，操作系统上运行着各种应用程序，如Word, QQ等。
+
+
+操作系统将时间分成很多细小的时间片，一个时间片给一个程序用，另一个时间片给另一个程序用，并频繁地在程序间切换。不过，在应用程序看来，整个机器资源好像都归他使，操作系统给他提供了这种假象。
+
+
+对程序员而言，我们写程序，基本不用考虑其他应用程序，我们想好怎么做自己的事就可以了。
+
+
+应用程序看上去能做很多事情，能读写文档，能播放音乐，能聊天，能玩游戏，能下围棋 ......
+
+
+但本质上，计算机只会执行预先写好的指令而已，这些指令也只是操作数据或者设备。所谓程序，基本上就是告诉计算机要操作的数据和执行的指令序列， 即对什么数据做什么操作。
+
+
+比如说：
+
+
+    读文档，就是将数据从磁盘加载到内存，然后输出到显示器上
+
+    写文档，就是将数据从内存写回磁盘。
+
+    播放音乐，就是将音乐的数据加载到内存，然后写到声卡上。
+
+    聊天，就是从键盘接收聊天数据，放到内存，然后传给网卡，通过网络传给另一个人的网卡，再从网卡传到内存，显示在显示器上。
+
+
+基本上，所有数据都需要放到内存进行处理，程序的很大一部分工作就是操作在内存中的数据。
+
+
+本文主要就说说这个"数据"。（以Java为例）
+
+
+数据
+
+
+数据是什么？数据在计算机内部都是二进制，不方便操作，为了方便操作数据，高级语言引入了"数据类型"和"变量"的概念。
+
+
+数据类型
+
+
+数据类型用于对数据归类，方便理解和操作，对Java语言而言，有如下基本数据类型：
+
+
+    整数类型：有四种整型 byte/short/int/long，分别有不同的取值范围
+
+    小数类型 ：有两种类型 float/double，有不同的取值范围和精度
+
+    字符类型：char，表示单个字符
+
+    真假类型：boolean，表示真假
+
+
+基本数据类型都有对应的数组类型，数组表示固定长度的同种数据类型的多条记录，这些数据在内存中挨在一起存放。
+
+
+比如说，一个自然数可以用一个整数类型数据表示，100个连续的自然数可以用一个长度为100的整数数组表示。一个字符用一个char表示，一段文字可以用一个char数组表示。
+
+
+Java是一个面向对象的语言，除了基本数据类型，其他都是对象类型 ，对象到底是什么呢？
+
+
+简单的说，对象是由基本数据类型、数组和其他对象组合而成的一个东西，以方便对其整体进行操作。
+
+
+比如说，一个学生对象，可以由如下信息组成：
+
+
+    姓名：一个字符数组
+
+    年龄：一个整数
+
+    性别：一个字符
+
+    入学分数：一个小数
+
+
+日期在Java中也是一个对象，内部表示为整形long。
+
+
+就像世界万物的组成，都是由元素周期表中的108个基本元素组成的，基本数据类型就相当于化学中的基本元素，而对象就相当于世界万物。
+
+
+变量
+
+
+为了操作数据，需要把数据存放到内存中，所谓内存在程序看来就是一块有地址编号的连续的空间，放到内存中的某个位置后，为了方便地找到和操作这个数据，需要给这个位置起一个名字。编程语言通过变量这个概念来表示这个过程。
+
+
+声明一个变量，比如 int a其实就是在内存中分配了一个空间，这个空间存放int数据类型，a指向这个内存空间所在的位置，通过对a操作即可操作a指向的内存空间，比如a=5这个操作即可将a指向的内存空间的值改为5。
+
+
+之所以叫变量，是因为它表示的是内存中的位置，这个位置存放的值是可以变化的。
+
+
+虽然变量的值是可以变化的，但名字是不变的，这个名字应该代表程序员心目中这块内存位置的意义，这个意义应该是不变的，比如说这个变量int second表示时钟秒数，在不同时间可以被赋予不同的值，但它表示的就是时钟秒数。之所以说应该是因为这不是必须的，如果你非要起一个变量名叫age但赋予它身高的值，计算机也拿你没办法。
+
+
+重要的话再说一遍！变量就是给数据起名字，方便找不同的数据，它的值可以变，但含义不应变。再比如说一个合同，可以有四个变量：
+
+
+* first_party: 含义是甲方
+
+* second_party: 含义是乙方
+
+* contract_body: 含义是合同内容
+
+* contract_sign_date: 含义是合同签署日期
+
+
+这些变量表示的含义是确定的，但对不同的合同，他们的值是不同的。
+
+
+初学编程的人经常使用像a,b,c,hehe,haha这种无意义的名字，给变量起一个有意义的名字吧！
+
+
+通过声明变量，每个变量赋予一个数据类型和一个有意义的名字，我们就告诉了计算机我们要操作的数据。
+
+
+有了数据，怎么对数据进行操作呢？
+
